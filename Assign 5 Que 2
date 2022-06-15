@@ -1,0 +1,15 @@
+print("Finding all numbers in a range divisible by a given Number.")
+
+#Asking user for the starting and end points of the range.
+start_point = int(input("Enter starting number of range:\n"))
+end_point = int(input("Enter ending number of range:\n"))
+
+#Asking user the number for which they want to check divisibilty
+dividend= int(input("Enter number for which you want to check divisibilty:\n"))
+
+print("Following are the required numbers:")
+
+#Using for loop to print numbers in a range divisible by the given Number.
+for number in range(start_point, end_point):
+    if number % dividend== 0:
+        print(number)
