@@ -1,0 +1,29 @@
+#Checking if a triangle can be formed using all three given sides
+#Taking input sides from user
+
+side1= int(input("Enter length 1\n"))
+side2= int(input("Enter length 2\n"))
+side3= int(input("Enter length 3\n"))
+
+#If any one of the three side is greater than the sum of the other two, then a triangle cannot be formed.
+#Checking for this condition:
+check_1 = side1 + side2 > side3
+check_2 = side2 + side3 > side1
+check_3 = side1 + side3 > side2
+
+#Checking if all three conditions satisfy:
+triangle_check = str(check_1 & check_2 & check_3)
+
+#Using Heron's formula to find area of the triangle if it exists:
+s = round((side1 + side2 + side3) / 2)
+area_square = s * (s - side1) * (s - side2) * (s - side3)
+
+if triangle_check == "True":
+    area = area_square ** (1/2)
+    #Round off the result for a more understandable output
+    area_print = round(area)
+    #Print the area if sides form a triangle
+    print("Area of the triangle is", area_print, "square units")
+
+else:
+    print("These sides cannot form a triangle."
